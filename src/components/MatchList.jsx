@@ -1,10 +1,10 @@
 import React from "react";
-import matchData from "../data/matchData"
+// import matchData from '../data/matchData' removing because I have moved it to the parent app.js
 import Match from "./Match"
 
 function MatchList (props) {
-  
-  const oneMatch = matchData[0];
+   //change the below line to add props. before matchdata[0]
+  const oneMatch = props.matchData[0];
  
   return (
 <section className="PlayerList MatchList">

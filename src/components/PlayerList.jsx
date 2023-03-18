@@ -1,12 +1,13 @@
 import React from "react"
-import playerData from '../data/playerData'
-import matchData from '../data/matchData'
+// import playerData from '../data/playerData' removing because I have moved it to the parent app.js
+// import matchData from '../data/matchData' removing because I have moved it to the parent app.js
 import Player from "./Player"
 import { preparePlayerData, addWinsToPlayers } from '../helpers/playerHelpers'
 
 function PlayerList (props) {
-  const playerDataArray = preparePlayerData(playerData);
-  const parsedPlayerData = addWinsToPlayers(playerDataArray, matchData);
+  const playerDataArray = preparePlayerData(props.playerData);
+  //change the below line to add props. before match data
+  const parsedPlayerData = addWinsToPlayers(playerDataArray, props.matchData);
   const onePlayer = parsedPlayerData[0]
   return (
 <section className="PlayerList">
