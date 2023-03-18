@@ -4,12 +4,22 @@ import Match from "./Match"
 
 function MatchList (props) {
    //change the below line to add props. before matchdata[0]
-  const oneMatch = props.matchData[0];
- 
+   console.log("match****", props.matchData)
+  const matches = props.matchData.map((match) => {
+    
+    return (    
+     <Match
+      key={match.matchNumber}
+      players={match.players}
+      winner={match.winner}
+      scoreDifference={match.scoreDifference}
+    />)
+  });
+ console.log("matches:", matches)
   return (
 <section className="PlayerList MatchList">
     <h1>Match list</h1>
-    <Match players={oneMatch.players} winner={oneMatch.winner} scoreDifference={oneMatch.scoreDifference} />
+    {matches}
   </section>
   )
 }
